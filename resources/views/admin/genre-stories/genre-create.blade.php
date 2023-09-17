@@ -28,11 +28,15 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên danh mục</label>
-                                <input type="text" class="form-control" name="genre_name" value="{{old('genre_name')}}">
+                                <input type="text" class="form-control"
+                                       name="genre_name" value="{{old('genre_name')}}"
+                                       id="slug"
+                                       onkeyup="ChangeToSlug()"
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Slug danh mục</label>
-                                <input type="text" class="form-control" name="genre_slug" value="{{old('genre_slug')}}">
+                                <input type="text" class="form-control" name="genre_slug" value="{{old('genre_slug')}}" id="convert_slug">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mô tả</label>
