@@ -35,3 +35,4 @@ Route::post('/genres/update/{id}', [GenreStoryController::class, 'updateGenreSto
 // ROUTE: Stories
 Route::get('/stories/create', [StoryController::class, 'createStory'])->name('create-story');
 Route::get('/stories/list', [StoryController::class, 'getListStories'])->name('list-story');
+Route::post('/stories/store', [StoryController::class, 'storeStory'])->name('store-story');
