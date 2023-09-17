@@ -29,15 +29,16 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên danh mục</label>
                                 <input type="text" class="form-control"
-                                       id="exampleInputEmail1"
+                                       id="slug"
                                        name="genre_name"
+                                       onkeyup="ChangeToSlug()"
                                        value="{{ $genre->genre_name }}"
                                 >
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Slug danh mục</label>
                                 <input type="text" class="form-control"
-                                       id="exampleInputEmail1"
+                                       id="convert_slug"
                                        name="genre_slug"
                                        value="{{ $genre->genre_slug }}"
                                 >
