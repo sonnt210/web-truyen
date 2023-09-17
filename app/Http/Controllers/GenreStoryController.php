@@ -7,7 +7,6 @@ use App\Models\GenreStory;
 use Illuminate\Http\Request;
 use App\Services\GenreStoryService;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Log;
 
 class GenreStoryController extends Controller
 {
