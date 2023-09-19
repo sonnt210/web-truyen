@@ -19,4 +19,20 @@ class StoryServices
     {
         return $this->story_repository->createStory($data);
     }
+
+    public function getListStories()
+    {
+        return $this->story_repository->getListStories();
+    }
+
+    public function deleteStory($id)
+    {
+        return $this->story_repository->deleteStory($id);
+    }
+
+    public function editStory($id)
+    {
+        return $this->story_repository->editStory($id);
+    }
+
 }

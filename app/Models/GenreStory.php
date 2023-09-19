@@ -13,4 +13,9 @@ class GenreStory extends Model
     public $timestamps = true;
 
     protected $guarded = [];
+
+    public function story()
+    {
+        return $this->hasMany(Story::class);
+    }
 }

@@ -20,7 +20,7 @@ class StoryRepository
         $new_story->genre_id   = $data['genre_id'];
         $new_story->active     = $data['active'];
 
-        $path            = 'public/uploads/story_images';
+        $path            = 'uploads/story_images';
         $image           = $data['image'];
         $full_image_name = $image->getClientOriginalName();
         $image_name      = current(explode('.', $full_image_name));
@@ -30,5 +30,27 @@ class StoryRepository
 
         $new_story->save();
         return $new_story;
+    }
+
+    public function getListStories(): \Illuminate\Database\Eloquent\Collection
+    {
+        $result = Story::with('genreStory')->orderBy('id', 'DESC')->get();
+        return $result;
+    }
+
+    public function editStory($id)
+    {
+        return Story::find($id);
+    }
+
+
+    public function deleteStory($id)
+    {
+        $story      = Story::find($id);
+        $image_path = 'uploads/story_images/' . $story->image;
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+        return Story::find($id)->delete();
     }
 }

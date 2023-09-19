@@ -36,3 +36,6 @@ Route::post('/genres/update/{id}', [GenreStoryController::class, 'updateGenreSto
 Route::get('/stories/create', [StoryController::class, 'createStory'])->name('create-story');
 Route::get('/stories/list', [StoryController::class, 'getListStories'])->name('list-story');
 Route::post('/stories/store', [StoryController::class, 'storeStory'])->name('store-story');
+Route::get('/stories/edit/{id}', [StoryController::class, 'editStory'])->name('edit-story');
+Route::post('/stories/update/{id}', [StoryController::class, 'updateStory'])->name('update-story');
+Route::delete('/stories/delete/{id}', [StoryController::class, 'deleteStory'])->name('delete-story');
