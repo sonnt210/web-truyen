@@ -95,11 +95,11 @@ class StoryController extends Controller
             $story->active     = $request['active'];
             $get_image         = $request->image;
             if ($get_image) {
-                $image_path = 'uploads/story_images/' . $story->image;
+                $image_path = 'storage/story_images/' . $story->image;
                 if (file_exists($image_path)) {
                     unlink($image_path);
                 }
-                $path            = 'uploads/story_images';
+                $path            = 'storage/story_images';
                 $image           = $request['image'];
                 $full_image_name = $image->getClientOriginalName();
                 $image_name      = current(explode('.', $full_image_name));

@@ -20,7 +20,7 @@ class StoryRepository
         $new_story->genre_id   = $data['genre_id'];
         $new_story->active     = $data['active'];
 
-        $path            = 'uploads/story_images';
+        $path            = 'storage/story_images';
         $image           = $data['image'];
         $full_image_name = $image->getClientOriginalName();
         $image_name      = current(explode('.', $full_image_name));
@@ -47,7 +47,7 @@ class StoryRepository
     public function deleteStory($id)
     {
         $story      = Story::find($id);
-        $image_path = 'uploads/story_images/' . $story->image;
+        $image_path = 'storage/story_images/' . $story->image;
         if (file_exists($image_path)) {
             unlink($image_path);
         }

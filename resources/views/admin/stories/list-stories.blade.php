@@ -33,7 +33,7 @@
                                     <td>{{ $story->story_name }}</td>
                                     <td>{{ $story->story_slug }}</td>
                                     <td>
-                                        <img src="{{ asset('uploads/story_images/' . $story->image) }}" alt="" height="150" width="100">
+                                        <img src="{{ asset('storage/story_images/' . $story->image) }}" alt="" height="150" width="100">
                                     </td>
                                     <td>{{ $story->genreStory->genre_name }}</td>
                                     <td>

@@ -60,7 +60,7 @@
                                 <label for="exampleInputEmail1">Hình ảnh</label>
                                 <input type="file" class="form-control-file" name="image">
                                 <td>
-                                    <img src="{{ asset('uploads/story_images/' . $story->image) }}" alt="" height="150" width="100">
+                                    <img src="{{ asset('storage/story_images/' . $story->image) }}" alt="" height="150" width="100">
                                 </td>
                             </div>
 
