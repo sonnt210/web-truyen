@@ -3,6 +3,7 @@
 use App\Http\Controllers\GenreStoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+Route::get('/', [IndexController::class, 'home']);
+Route::get('/story-detail/{id}', [IndexController::class, 'storyDetail'])->name('story-detail');
 
 Auth::routes();
 

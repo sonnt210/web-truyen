@@ -53,35 +53,22 @@
         </nav>
 
         <!-- Slider -->
-        <div class="owl-carousel owl-theme">
-            <div class="item">
-                <img src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
-                <h5>Linh Vũ Thiên Hạ</h5>
-                <p><i class="fas fa-eye"></i> 69</p>
-            </div>
-            <div class="item">
-                <img src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
-                <h5>Linh Vũ Thiên Hạ</h5>
-                <p><i class="fas fa-eye"></i> 69</p>
-            </div>
-            <div class="item">
-                <img src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
-                <h5>Linh Vũ Thiên Hạ</h5>
-                <p><i class="fas fa-eye"></i> 69</p>
-            </div>
-            <div class="item">
-                <img src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
-                <h5>Linh Vũ Thiên Hạ</h5>
-                <p><i class="fas fa-eye"></i> 69</p>
-            </div>
-            <div class="item">
-                <img src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
-                <h5>Linh Vũ Thiên Hạ</h5>
-                <p><i class="fas fa-eye"></i> 69</p>
-            </div>
+    @yield('slide')
 
-        </div>
+    <!-- New Stories -->
 
+    @yield('content')
+
+        <!-- Footer -->
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">
+                    <a href="#">Back to top</a>
+                </p>
+                <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+                <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+            </div>
+        </footer>
     </div>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
