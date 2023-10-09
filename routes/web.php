@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'home']);
 Route::get('/story-detail/{id}', [IndexController::class, 'storyDetail'])->name('story-detail');
+Route::get('/genre/{slug}', [IndexController::class, 'listStoriesOfGenre'])->name('genre'); // danh sách truyện thuộc danh mục truyện
 
 Auth::routes();
 

@@ -25,6 +25,11 @@ class StoryServices
         return $this->story_repository->getListStories();
     }
 
+    public function getListStoriesActive()
+    {
+        return $this->story_repository->getListStoriesActive();
+    }
+
     public function deleteStory($id)
     {
         return $this->story_repository->deleteStory($id);

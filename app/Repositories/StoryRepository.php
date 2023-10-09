@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Story;
+use Illuminate\Database\Eloquent\Collection;
 
 class StoryRepository
 {
@@ -32,9 +33,20 @@ class StoryRepository
         return $new_story;
     }
 
-    public function getListStories(): \Illuminate\Database\Eloquent\Collection
+    public function getListStories(): Collection
     {
         $result = Story::with('genreStory')->orderBy('id', 'DESC')->get();
+        return $result;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getListStoriesActive()
+    {
+        $result = Story::with('genreStory')
+            ->orderBy('id', 'DESC')
+            ->where('active', 0)->get();
         return $result;
     }
 
@@ -42,7 +54,6 @@ class StoryRepository
     {
         return Story::find($id);
     }
-
 
     public function deleteStory($id)
     {

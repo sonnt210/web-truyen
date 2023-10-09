@@ -8,18 +8,19 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row">
+            @foreach($list_stories as $story)
             <div class="col-md-3">
                 <div class="card mb-3 box-shadow">
-                    <img class="card-img-top"
-                         alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                         src="{{ asset('storage/story_images/linh-vu-thien-ha9.jpg') }}">
+                    <img class="card-img-top" src="{{ asset('storage/story_images/' . $story->image) }}">
                     <div class="card-body">
-                        <h3>Tên truyện</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                        <h4>{{$story->story_name}}</h4>
+                        <p class="card-text">{{ \Illuminate\Support\Str::limit($story->summary, 200) }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="#" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
+                                <a href="{{ url( $story->story_slug) }}"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    Đọc truyện
+                                </a>
                                 <div class="btn btn-sm btn-outline-secondary">
                                     <i class="fas fa-eye"></i> 100
                                 </div>
@@ -29,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         <a href="" class="btn btn-success">Xem tất cả</a>
     </div>
